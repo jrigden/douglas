@@ -1,0 +1,410 @@
+{% include 'top.html' %}
+
+        <div id="message-section">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <h1 id="message-header">Cascadia Podcasters</h1>
+                    <p id="message-message">
+                        This is a direcory and search engine of the podcasts being produced in <a href="https://en.wikipedia.org/wiki/Cascadia_(independence_movement)">Cascadia</a>. 
+                        We would like this list to be as complete as possible. Any podcast in the region can be added.
+            
+                        We have <strong>{{number_of_podcasts}}</strong> active podcasts in our database.
+                        <br>
+                    
+                        <a href="mailto:jasonrigden@jasonrigden.com">Add Your Podcast!</a>  
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="masthead">
+
+
+
+
+
+                <div id="search-section">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <h2>Search</h2>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="search-input">
+
+                            </div>
+                            <button onclick="makeSearchURL()" class="btn btn-primary btn-lg button-left">Search</button>
+                            <button type="reset" id="lucky" onclick="luckyPodcast()"
+                                class="btn btn-primary btn-lg button-right">Lucky</button>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div id="categories-section">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Categories</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Art">Arts</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Fashion%20and%20Beauty">Fashion and Beauty</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Food">Food</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Literature">Literature</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Performing%20Arts">Performing Arts</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Visual%20Arts">Visual Arts</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Business">Business</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Business%20News">Business News</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Careers">Careers</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Investing">Investing</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Management%20and%20Marketing">Management and Marketing</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Shopping">Shopping</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Comedy">Comedy</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Education">Education</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Educational%20Technology">Educational Technology</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Higher%20Education">Higher Education</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/K-12">K-12</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Language%20Courses">Language Courses</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Training">Training</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+
+
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Games%20and%20Hobbies">Games and Hobbies</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Automotive">Automotive</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Aviation">Aviation</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Hobbies">Hobbies</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Other%20Games">Other Games</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Video%20Games">Video Games</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Government%20and%20Organizations">Government and
+                                        Organizations</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Local">Local</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/National">National</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Non-Profit">Non-Profit</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Regional">Regional</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Health">Health</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Alternative%20Health">Alternative Health</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Fitness%20and%20Nutrition">Fitness and Nutrition</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Self-Help">Self-Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Sexuality">Sexuality</a>
+                                    </li>
+                                </ul>
+                            </ul>
+
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Kids%20and%20Family">Kids and Family</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Music">Music</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/News%20and%20Politics">News and Politics</a>
+                                </li>
+                            </ul>
+
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Religion%20and%20Spirituality">Religion and Spirituality</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Buddhism">Buddhism</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Christianity">Christianity</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Hinduism">Hinduism</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Islam">Islam</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Judaism">Judaism</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Other">Other</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Spirituality">Spirituality</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Science%20and%20Medicine">Science and Medicine</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Medicine">Medicine</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Natural%20Sciences">Natural Sciences</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Social%20Sciences">Social Sciences</a>
+                                    </li>
+                                </ul>
+                            </ul>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Society%20and%20Culture">Society and Culture</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/History">History</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Personal%20Journals">Personal Journals</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Philosophy">Philosophy</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Places%20and%20Travel">Places and Travel</a>
+                                    </li>
+                                </ul>
+                            </ul>
+
+
+
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Sports%20and%20Recreation">Sports and Recreation</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Amateur">Amateur</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/College%20and%20High%20School">College and High School</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Outdoor">Outdoor</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Professional">Professional</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/Technology">Technology</a>
+                                </li>
+                                <ul>
+                                    <li>
+                                        <a href="/#/category/Gadgets">Gadgets</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Tech%20News">Tech News</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Podcasting">Podcasting</a>
+                                    </li>
+                                    <li>
+                                        <a href="/#/category/Software%20How-To">Software How-To</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul class="list-unstyled categories">
+                                <li>
+                                    <a href="/#/category/TV%20and%20Film">TV and Film</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+
+                <div class="row" id="podcasts-section">
+
+
+                </div>
+
+
+            </div>
+
+
+            <div id="cpp-section">
+                <div class="row">
+                    <div class="offset-md-3 col-md-6">
+                        <hr>
+                        <h4>
+                            Cascadia Podcasters Podcast
+                        </h4>
+                        <p id="podcaster-podcast-desc">
+                            Interviews with the podcasters of the PNW. We talk about to podcasters about their show.
+                            Why they make it, how they make it, and a little about podcasting in general.
+                            Email <a href="mailto:jasonrigden@jasonrigden.com">Jason Rigden</a> to become a guest on the
+                            show!
+                        </p>
+                        <p>
+                            <strong>
+                                Subscribe on <a
+                                    href="https://itunes.apple.com/us/podcast/seattle-podcasters-podcast/id1445793436?mt=2&ls=1">Apple
+                                    Podcasts</a>, <a
+                                    href="https://open.spotify.com/show/7cCTtsGumpGd2VNZLHO4cT">Spotify</a>,or good old
+                                fashion <a href="https://seattlepodcasterspodcast.libsyn.com/rss">RSS</a>.
+                            </strong>
+                        </p>
+
+                        <h5>
+                            Recent Episodes
+                        </h5>
+                        <ul class="list-unstyled" id="recent-episodes">
+                            {% for episodes in podcasters_podcast_episodes %}
+                            <li>
+                                <a href="{{ episodes.link }}">{{ episodes.title }}</a>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        </div>
+        </div>
+
+    {% raw %}
+
+    <script id="podcast-template" type="text/x-handlebars-template">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <img src="/cover_art/{{slug}}.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{{link}}">{{title}}</a>
+                    </h5>
+                    <p class="card-text">
+                        {{truncate description 250}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    {% endraw %}
+{% include 'bottom.html' %}
